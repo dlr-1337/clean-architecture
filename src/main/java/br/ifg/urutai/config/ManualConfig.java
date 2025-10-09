@@ -10,7 +10,7 @@ import br.ifg.urutai.usecase.port.IdGenerator;
 import br.ifg.urutai.usecase.port.PasswordEncoder;
 import br.ifg.urutai.usecase.port.UserRepository;
 
-public final class ManualConfig {
+public class ManualConfig {
 
     private final UserRepository userRepository = new InMemoryUserRepository();
     private final IdGenerator idGenerator = new UuidGenerator();

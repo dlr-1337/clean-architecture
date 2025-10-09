@@ -4,7 +4,7 @@ import br.ifg.urutai.usecase.port.IdGenerator;
 
 import java.util.UUID;
 
-public final class UuidGenerator implements IdGenerator {
+public class UuidGenerator implements IdGenerator {
 
     @Override
     public String generate() {

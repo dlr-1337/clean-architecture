@@ -1,8 +1,6 @@
 package br.ifg.urutai.entity;
 
-import java.util.Objects;
-
-public final class User {
+public class User {
     private final String id;
     private final String email;
     private final String password;
@@ -27,7 +25,7 @@ public final class User {
         return new UserBuilder();
     }
 
-    public static final class UserBuilder {
+    public static class UserBuilder {
         private String id;
         private String email;
         private String password;
@@ -82,27 +80,6 @@ public final class User {
 
     public String getFirstName() {
         return firstName;
-    }
-
-    @Override
-    public boolean equals(final Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        User user = (User) o;
-        return Objects.equals(id, user.id)
-            && Objects.equals(email, user.email)
-            && Objects.equals(password, user.password)
-            && Objects.equals(lastName, user.lastName)
-            && Objects.equals(firstName, user.firstName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, email, password, lastName, firstName);
     }
 
     @Override

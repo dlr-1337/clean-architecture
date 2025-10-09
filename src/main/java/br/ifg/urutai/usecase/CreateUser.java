@@ -25,9 +25,9 @@ public final class CreateUser {
 
     public User create(final User user) {
         UserValidator.validateCreateUser(user);
-        repository.findByEmail(user.getEmail()).ifPresent(existing -> {
-            throw new UserAlreadyExistsException(existing.getEmail());
-        });
+        if (repository.findByEmail(user.getEmail()).isPresent()) {
+            throw new UserAlreadyExistsException(user.getEmail());
+        }
 
         User userToSave = User.builder()
             .id(idGenerator.generate())

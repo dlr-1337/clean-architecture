@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public final class InMemoryUserRepository implements UserRepository {
+public class InMemoryUserRepository implements UserRepository {
 
     private final Map<String, User> inMemoryDb = new HashMap<>();
 
@@ -30,7 +30,7 @@ public final class InMemoryUserRepository implements UserRepository {
             .values()
             .stream()
             .filter(user -> user.getEmail().equals(email))
-            .findFirst();
+            .findAny();
     }
 
     @Override
